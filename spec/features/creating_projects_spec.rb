@@ -3,6 +3,7 @@ require 'spec_helper'
 feature 'Creating project' do
 
   before do
+    sign_in_as!(FactoryGirl.create(:admin_user))
     visit '/'
     click_link 'New project'
   end
