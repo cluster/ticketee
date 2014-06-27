@@ -24,7 +24,7 @@ feature "creating tickets" do
     expect(page).to have_content("Ticket has been created.")
 
     within "#ticket #author" do
-      expect(page).to have_content("Created by sample@example.com")
+      expect(page).to have_content("Created by #@email")
     end
   end
   scenario "creating a ticket without valid attributes fails" do
