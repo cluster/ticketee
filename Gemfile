@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 #to use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'cancan', '~> 1.6.10'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
