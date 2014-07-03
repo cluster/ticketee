@@ -44,5 +44,10 @@ describe TicketsController do
       get :update, { project_id: project.id, id: ticket.id, ticket: {} }
       cannot_update_tickets!
     end
+    it "cannot delete a ticket withour permission" do
+      delete :destroy, {project_id: project.id, id: ticket.id }
+      expect(response).to redirect_to(project)
+      expect(flash[:alert]).to eql("You cannot delete tickets on this project.")
+    end
   end
 end
