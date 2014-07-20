@@ -3,6 +3,7 @@ Ticketee::Application.routes.draw do
   resources :projects do
     resources :tickets
   end
+  resources :files
   resources :users
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719133026) do
+ActiveRecord::Schema.define(version: 20140720140004) do
 
   create_table "assets", force: true do |t|
     t.string   "asset"
     t.integer  "ticket_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content_type"
   end
 
   create_table "permissions", force: true do |t|
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 20140719133026) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.string   "asset"
   end
 
   add_index "tickets", ["project_id"], name: "index_tickets_on_project_id"
