@@ -7,6 +7,7 @@ class TicketsController < ApplicationController
   before_action :authorize_delete!, only: :destroy
   def new
     @ticket = @project.tickets.build
+    3.times { @ticket.assets.build }
   end
 
   def create
@@ -52,7 +53,7 @@ class TicketsController < ApplicationController
   end
   private
   def ticket_params
-    params.require(:ticket).permit(:title, :description, :asset)
+    params.require(:ticket).permit(:title, :description, assets_attributes: [:asset])
   end
   private
   def set_ticket
